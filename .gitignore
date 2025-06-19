@@ -1,0 +1,22 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+
+# IDE-specific
+.vs/
+*.csproj
+*.sln
+*.user
+*.unityproj
+
+# Only ignore .meta if the asset is also ignored
+!*.meta
+
+# Mac & Windows
+.DS_Store
+Thumbs.db
