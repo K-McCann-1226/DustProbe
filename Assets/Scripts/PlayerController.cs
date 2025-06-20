@@ -4,23 +4,37 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float moveSpeed = 5f;
 
-    // Update is called once per frame
+    private Vector2 targetPosition;
+    private bool isMoving = false;
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(1)) // Right-click
+        // On right-click
+        if (Input.GetMouseButtonDown(1))
         {
-        //HandleMovementCommand();
+            // Get mouse position in world coordinates
+            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
+            targetPosition = mouseWorldPos;
+            isMoving = true;
+
+            Debug.DrawLine(transform.position, mouseWorldPos, Color.green, 3f);
         }
-    }
-    
-    void HandleMovementCommand()
-    {
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+
+        // Move player toward target
+        if (isMoving)
         {
-            Debug.Log("Move command issued to: " + hit.point);
-            // We'll later send this to a selected unit
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+            // Stop when close enough
+            if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+            {
+                isMoving = false;
+                
+                
+            }
         }
     }
 }
