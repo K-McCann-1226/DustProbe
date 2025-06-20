@@ -9,32 +9,37 @@ public class PlayerController : MonoBehaviour
     private Vector2 targetPosition;
     private bool isMoving = false;
 
+    public bool isSelected = true; // Placeholder until selection system is added
+
     void Update()
     {
-        // On right-click
-        if (Input.GetMouseButtonDown(1))
+        if (isSelected)
         {
-            // Get mouse position in world coordinates
-            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            
-            targetPosition = mouseWorldPos;
-            isMoving = true;
-
-            Debug.DrawLine(transform.position, mouseWorldPos, Color.green, 3f);
-        }
-
-        // Move player toward target
-        if (isMoving)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-
-            // Stop when close enough
-            if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+            // On right-click
+            if (Input.GetMouseButtonDown(1))
             {
-                isMoving = false;
-                
-                
+                // Get mouse position in world coordinates
+                Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                targetPosition = mouseWorldPos;
+                isMoving = true;
+
+                Debug.DrawLine(transform.position, mouseWorldPos, Color.green, 3f);
             }
-        }
+
+            // Move player toward target
+            if (isMoving)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+                // Stop when close enough
+                if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+                {
+                    isMoving = false;
+                    //could add some logic for a stop moving animation or something.
+
+                }
+            }
+        } 
     }
 }
