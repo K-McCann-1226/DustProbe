@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
     public float zoomSpeed = 5f; // Speed of zooming
     public float minZoom = 10f; // Minimum zoom limit
     public float maxZoom = 50f; // Maximum zoom limit
-    public float edgeScrollSpeed = 5f; // Speed of edge scrolling
+    public float edgeScrollSpeed = 0f; // Speed of edge scrolling
     public float edgeThreshold = 50f; // How close to the edge before scrolling starts
 
     private Vector3 targetPosition; // Target position for smooth movement
