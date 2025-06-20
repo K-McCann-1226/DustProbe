@@ -3,16 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Map
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Players
   - Water
   - UI
-  - 
-  - 
+  - Map
+  - Camera
   - 
   - 
   - 
@@ -38,6 +39,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 4002125179
+    locked: 0
+  - name: Units
+    uniqueID: 2498754439
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

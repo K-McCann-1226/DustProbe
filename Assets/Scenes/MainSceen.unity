@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 473014791}
   - component: {fileID: 473014793}
   - component: {fileID: 473014792}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HumanPlayer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,8 +244,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1796212857
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 46f6a9164752b824f9443480236087e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -267,7 +267,7 @@ Transform:
   m_GameObject: {fileID: 473014786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -312,6 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897a11c52ca4ab24eab12482d4331cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuildModeBool: 0
+  previewPrefab: {fileID: 219748396318584134, guid: da0119149b62a994e9d18eaee74fc720, type: 3}
+  previewColor: {r: 0, g: 1, b: 0, a: 0.5}
 --- !u!1 &1086135372
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1086135373}
+  - component: {fileID: 1086135374}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -343,6 +347,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1086135374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086135372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6f4c1325008a24eb59f2c0a81e5a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePrefab: {fileID: 3948903366237238471, guid: 24dace1aa9c6dfd44909f1388eb994bc, type: 3}
+  defaultTileData: {fileID: 11400000, guid: 4dfd185463cd6124abdce32d4c86cec3, type: 2}
+  MapWidth: 25
+  MapHeight: 25
 --- !u!1 &1395036788
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +375,7 @@ GameObject:
   - component: {fileID: 1395036790}
   - component: {fileID: 1395036789}
   - component: {fileID: 1395036792}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -452,7 +472,7 @@ MonoBehaviour:
   zoomSpeed: 5
   minZoom: 10
   maxZoom: 50
-  edgeScrollSpeed: 5
+  edgeScrollSpeed: 0
   edgeThreshold: 50
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
