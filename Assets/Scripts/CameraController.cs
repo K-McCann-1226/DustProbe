@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour
     public float minZoom = 10f; // Minimum zoom limit
     public float maxZoom = 50f; // Maximum zoom limit
     public float edgeScrollSpeed = 0f; // Speed of edge scrolling
-    public float edgeThreshold = 50f; // How close to the edge before scrolling starts
+    public float edgeThreshold = 0f; // How close to the edge before scrolling starts
 
     private Vector3 targetPosition; // Target position for smooth movement
     private Vector3 dragOrigin; // Stores initial mouse click position
@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
     {
         HandleCameraDrag();
         HandleZoom();
-        HandleEdgeScrolling();
+        //HandleEdgeScrolling();
         SmoothMove();
     }
 
@@ -52,21 +52,21 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    void HandleEdgeScrolling()
-    {
-        Vector3 moveDirection = Vector3.zero;
+    //void HandleEdgeScrolling()
+    //{
+    //    Vector3 moveDirection = Vector3.zero;
 
-        if (Input.mousePosition.x <= edgeThreshold) // Left edge
-            moveDirection.x -= 1;
-        if (Input.mousePosition.x >= Screen.width - edgeThreshold) // Right edge
-            moveDirection.x += 1;
-        if (Input.mousePosition.y <= edgeThreshold) // Bottom edge
-            moveDirection.y -= 1;
-        if (Input.mousePosition.y >= Screen.height - edgeThreshold) // Top edge
-            moveDirection.y += 1;
+    //    if (Input.mousePosition.x <= edgeThreshold) // Left edge
+    //        moveDirection.x -= 1;
+    //    if (Input.mousePosition.x >= Screen.width - edgeThreshold) // Right edge
+    //        moveDirection.x += 1;
+    //    if (Input.mousePosition.y <= edgeThreshold) // Bottom edge
+    //        moveDirection.y -= 1;
+    //    if (Input.mousePosition.y >= Screen.height - edgeThreshold) // Top edge
+    //        moveDirection.y += 1;
 
-        targetPosition += moveDirection.normalized * edgeScrollSpeed * Time.deltaTime;
-    }
+    //    targetPosition += moveDirection.normalized * edgeScrollSpeed * Time.deltaTime;
+    //}
 
     void SmoothMove()
     {
