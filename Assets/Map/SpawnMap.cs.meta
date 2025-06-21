@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - tilePrefab: {instanceID: 0}
+  - tilePrefab: {fileID: 3948903366237238471, guid: 24dace1aa9c6dfd44909f1388eb994bc, type: 3}
   - grassTileData: {fileID: 11400000, guid: 4dfd185463cd6124abdce32d4c86cec3, type: 2}
   - waterTileData: {fileID: 11400000, guid: aaa2c8cca8026a344906f571696fec0d, type: 2}
   executionOrder: 0
